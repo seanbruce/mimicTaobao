@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  vertical-align: middle;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
     size: 12px;
     family: tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
   }
-  color: #3C3C3C;
+  color: $body-color;
 }
 
 a {

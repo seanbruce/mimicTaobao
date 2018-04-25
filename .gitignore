@@ -58,7 +58,8 @@ typings/
 .env
 
 # directory
-src/iamges
-src/fonts
+src/iamges/
+src/fonts/
 dist/
 src/js/venders/
+src/images/tbcarton.jpg

@@ -1,0 +1,151 @@
+// PSEUDO CLASSES
+%dropdown {
+  display: none;
+  z-index: 10001;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  border: {
+    style: solid;
+    width: 1px;
+    color: #EEE;
+  }
+  background-color: #FFF;
+  &.dropdown {
+    display: block;
+  }
+}
+
+nav {
+  background-color: $navigation-bar-background-color;
+  border: {
+    style: solid;
+    width: 1px;
+    color: #EEE;
+  }
+  .site-nav-container {
+    width: 1190px;
+    height: 35px;
+    margin: 0 auto;
+    display: flex;
+    flex: {
+      direction: row;
+      wrap: nowrap;
+    }
+    justify-content: space-between;
+    align-items: stretch;
+    .site-nav-container-btn-group {
+      height: inherit;
+      color: $navigation-bar-font-color;
+      .site-nav-container-btn {
+        display: inline-block;
+        position: relative;
+        .site-nav-btn-hd {
+          z-index: 10002;
+          position: relative;
+          padding: 0 6px;
+          height: 35px;
+          line-height: 35px;
+          svg {
+            width: 12px !important;
+            color: $navigation-bar-icon-color;
+          }
+          .site-nav-icon-highlight {
+            color: $navigation-bar-icon-highlight-color;
+          }
+        }
+        .site-nav-btn-dropdown:hover {
+          padding: 0 5px;
+          border-width: 0 1px;
+          border-style: solid;
+          border-color: #EEE;
+          background-color: #FFF;
+        }
+        .site-nav-region-list {
+          @extend %dropdown;
+          padding: 8px 0;
+          width: 250px;
+          height: 270px;
+          overflow: auto;
+          .site-nav-region-list-item {
+            display: list-item;
+            padding-left: 8px;
+            height: 29px;
+            line-height: 29px;
+            cursor: pointer;
+          }
+        }
+        .site-nav-user {
+          @extend %dropdown;
+          display: block;
+          width: 266px;
+          height: 123px;
+          padding: 8px;
+          .site-nav-user-panel {
+            .site-nav-user-wrapper {
+              float: left;
+              margin: {
+                right: 10px;
+                left: 9px;
+              }
+              width: 62px;
+              height: 62px;
+              padding: 9px;
+              box-sizing: content-box;
+              .site-nav-user-avatar {
+                display: block;
+                overflow: hidden;
+                border: {
+                  style: solid;
+                  width: 3px;
+                  color: #FFF;
+                }
+                border-radius: 50%;
+                img {
+                  display: block;
+                  width: 56px;
+                  height: 56px;
+                }
+              }
+            }
+            .site-nav-user-info {
+              height: 80px;
+              overflow: hidden;
+              .site-nav-user-operate {
+                text-align: right;
+                height: 20px;
+                line-height: 20px;
+                overflow: hidden;
+              }
+              .level-info {
+                height: 20px;
+                line-height: 20px;
+                overflow: hidden;
+              }
+            }
+            .site-nav-user-privilege {
+              display: block;
+              text-align: center;
+              border: {
+                style: solid;
+                width: 1px;
+                color: #FFE8DE;
+              };
+              background-color: #FFF0E8;
+              padding: 4px 0;
+              }
+            }
+          }
+        }
+      }
+      @at-root .site-nav-pipe {
+        color: $navigation-bar-pipe-color !important;
+        padding:0 5px !important;
+      }
+      .site-nav-container-btn-region {
+        span {
+          margin-right: 7px;
+        }
+      }
+    }
+  }

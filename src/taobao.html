@@ -4,30 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>淘宝网 - 淘！我喜欢</title>
 </head>
 <body>
-  <div class="site-nav-container">
-    <ul class="site-nav-container-btn-group">
-      <li class="site-nav-container-btn-region site-nav-container-btn">
-        <span>中国大陆</span>
-        <i></i>
-      </li>
-      <li class="site-nav-container-btn-login site-nav-container-btn">
-        <span>username</span>
-        <i></i>
-      </li>
-      <li class="site-nav-container-btn-message site-nav-container-btn">
-        <i></i>
-        <sapn>消息</sapn>
-        <i></i>
-      </li>
-      <li class="site-nav-container-btn-mobile site-nav-container-btn">
-        <span>手机逛淘宝</span>
-      </li>
-    </ul>
-    <ul class="site-nav-container-btn-group">
-    </ul>
-  </div>
+  <nav>
+    <div class="site-nav-container">
+      <ul class="site-nav-container-btn-group">
+        <li class="site-nav-container-btn-region site-nav-container-btn">
+          <div class="site-nav-btn-hd site-nav-btn-dropdown">
+            <span>中国大陆</span>
+            <i class="fas fa-angle-down"></i>
+          </div>
+          <ul class="site-nav-region-list" id="siteNavRegionList">
+          </ul>
+        </li>
+        <li class="site-nav-container-btn-login site-nav-container-btn">
+          <div class="site-nav-btn-hd site-nav-btn-dropdown">
+            <span>username</span>
+            <i class="fas fa-angle-down"></i>
+          </div>
+          <div class="site-nav-user">
+            <div class="site-nav-user-panel">
+              <div class="site-nav-user-wrapper">
+                <a href="#" class="site-nav-user-avatar">
+                  <img src="images/tbcarton.jpg" alt="">
+                </a>
+              </div>
+              <div class="site-nav-user-info">
+                <p class="site-nav-user-operate">
+                  <a href="#">账号管理</a>
+                  <span class="site-nav-pipe">|</span>
+                  <a href="#">退出</a>
+                </p>
+                <p class="level-info">淘气值：619</p>
+                <p class="level-info">普通会员</p>
+              </div>
+              <a href="#" class="site-nav-user-privilege">查看你的专属权益</a>
+            </div>
+          </div>
+        </li>
+        <li class="site-nav-container-btn-message site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <i class="fas fa-envelope"></i>
+            <sapn>消息</sapn>
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </li>
+        <li class="site-nav-container-btn-mobile site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <span>手机逛淘宝</span>
+          </div>
+        </li>
+      </ul>
+      <ul class="site-nav-container-btn-group">
+        <li class="site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <span>我的淘宝</span>
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </li>
+        <li class="site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <span>购物车</span>
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </li>
+        <li class="site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <i class="fas fa-star"></i>
+            <span>收藏夹</span>
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </li>
+        <li class="site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <span>商品分类</span>
+          </div>
+        </li>
+        <li class="site-nav-container-btn">
+          <div class="site-nav-btn-hd site-nav-pipe">|</div>
+        </li>
+        <li class="site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <span>卖家中心</span>
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </li>
+        <li class="site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <span>联系客服</span>
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </li>
+        <li class="site-nav-container-btn">
+          <div class="site-nav-btn-hd">
+            <i class="fas fa-bars site-nav-icon-highlight"></i>
+            <span>网站导航</span>
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </body>
 </html>
