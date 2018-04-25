@@ -17,8 +17,6 @@ const supportPlugin = new Webpack.ProvidePlugin({
 const clean = new CleanWebpackPlugin(['dist']);
 const miniSccExtractPlugin = new MiniSccExtractPlugin ({
   filename: 'app.min.css',
-  outputPath: 'css/',
-  publicPath: 'css/',
 });
 
 const config = {
@@ -26,7 +24,7 @@ const config = {
     app: './src/js/main.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/js'),
     filename: 'app.bundle.min.js',
   },
   module: {
@@ -87,7 +85,18 @@ const config = {
           }
         ],
         exclude: path.resolve(__dirname, 'src/taobao.html'),
-      }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            }
+          }
+        ]
+      },
     ],
   },
   plugins: [
