@@ -51,15 +51,18 @@ nav {
             color: $navigation-bar-icon-color;
           }
           .site-nav-icon-highlight {
-            color: $navigation-bar-icon-highlight-color;
+            color: $navigation-bar-highlight-color;
           }
         }
-        .site-nav-btn-dropdown:hover {
+        .site-nav-btn-dropdown {
           padding: 0 5px;
           border-width: 0 1px;
           border-style: solid;
           border-color: #EEE;
           background-color: #FFF;
+        }
+        .site-nav-btn-hightlight:hover {
+          color: $navigation-bar-highlight-color;
         }
         .site-nav-region-list {
           @extend %dropdown;
@@ -141,16 +144,31 @@ nav {
               }
             }
           }
+          .site-nav-message-panel {
+            @extend %dropdown;
+            z-index: 10000000;
+            width: 288px;
+            box-shadow: 1px 1px 2px #ddd;
+            .site-nav-message-panel-footer {
+              height: 32px;
+            }
+          }
         }
-      }
       @at-root .site-nav-pipe {
         color: $navigation-bar-pipe-color !important;
         padding:0 5px !important;
       }
       .site-nav-container-btn-region {
         span {
+          color: $body-color;
           margin-right: 7px;
+        }
+      }
+      .site-nav-container-btn-message {
+        span {
+          color: $body-color;
         }
       }
     }
   }
+}

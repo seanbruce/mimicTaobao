@@ -1,0 +1,169 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+body {
+  font-size: 12px;
+  font-family: tahoma, arial, "Hiragino Sans GB", "宋体", sans-serif;
+  color: #3C3C3C;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  display: block;
+}
+
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user, nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-region-list {
+  display: none;
+  z-index: 10001;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #EEE;
+  background-color: #FFF;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .dropdown.site-nav-user, nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .dropdown.site-nav-region-list {
+  display: block;
+}
+
+nav {
+  background-color: #F5F5F5;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #EEE;
+}
+nav .site-nav-container {
+  width: 1190px;
+  height: 35px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+nav .site-nav-container .site-nav-container-btn-group {
+  height: inherit;
+  color: #6C6C6C;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn {
+  display: inline-block;
+  position: relative;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-btn-hd {
+  z-index: 10002;
+  position: relative;
+  padding: 0 6px;
+  height: 35px;
+  line-height: 35px;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-btn-hd svg {
+  width: 12px !important;
+  color: #9c9c9c;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-btn-hd .site-nav-icon-highlight {
+  color: #F40;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-btn-dropdown {
+  padding: 0 5px;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: #EEE;
+  background-color: #FFF;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-btn-hightlight:hover {
+  color: #F40;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-region-list {
+  padding: 8px 0;
+  width: 250px;
+  height: 270px;
+  overflow: auto;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-region-list .site-nav-region-list-item {
+  color: #3C3C3C;
+  display: list-item;
+  padding-left: 8px;
+  height: 29px;
+  line-height: 29px;
+  cursor: pointer;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user {
+  width: 266px;
+  height: 123px;
+  padding: 8px;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user .site-nav-user-panel .site-nav-user-wrapper {
+  float: left;
+  margin-right: 10px;
+  margin-left: 9px;
+  width: 62px;
+  height: 62px;
+  padding: 9px;
+  box-sizing: content-box;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user .site-nav-user-panel .site-nav-user-wrapper .site-nav-user-avatar {
+  display: block;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #FFF;
+  border-radius: 50%;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user .site-nav-user-panel .site-nav-user-wrapper .site-nav-user-avatar img {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user .site-nav-user-panel .site-nav-user-info {
+  height: 80px;
+  overflow: hidden;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user .site-nav-user-panel .site-nav-user-info .site-nav-user-operate {
+  text-align: right;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user .site-nav-user-panel .site-nav-user-info .site-nav-user-operate a {
+  color: #3C3C3C;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user .site-nav-user-panel .site-nav-user-info .level-info {
+  color: #3C3C3C;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn .site-nav-user .site-nav-user-panel .site-nav-user-privilege {
+  color: #3C3C3C;
+  display: block;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FFE8DE;
+  background-color: #FFF0E8;
+  padding: 4px 0;
+}
+.site-nav-pipe {
+  color: #DDD !important;
+  padding: 0 5px !important;
+}
+
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn-region span {
+  color: #3C3C3C;
+  margin-right: 7px;
+}
+nav .site-nav-container .site-nav-container-btn-group .site-nav-container-btn-message .site-nav-btn-hd span {
+  color: #3C3C3C;
+}
