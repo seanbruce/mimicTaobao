@@ -1,0 +1,30 @@
+.top {
+  background: {
+    color: #FFF;
+  }
+  padding-top: 24px;
+  height: 97px;
+  display: block;
+  width: 100%;
+  .top-wrap {
+    width: 1190px;
+    margin: 0 auto;
+    position: relative;
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+      overflow: hidden;
+    }
+    .top-logo {
+      float: left;
+      width: 190px;
+      background-color: transparent;
+      img {
+        display: block;
+        margin-left: 22px;
+        width: 142px;
+      }
+    }
+  }
+}

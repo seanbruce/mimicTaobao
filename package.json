@@ -1,13 +1,12 @@
 {
   "name": "mimictaobao",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:server": "webpack-dev-server",
     "build:prod": "webpack -p",
-    "build" : "webpack -d"
+    "build": "webpack -d"
   },
   "repository": {
     "type": "git",
@@ -37,5 +36,6 @@
   "bugs": {
     "url": "https://github.com/seanbruce/mimicTaobao/issues"
   },
-  "homepage": "https://github.com/seanbruce/mimicTaobao#readme"
+  "homepage": "https://github.com/seanbruce/mimicTaobao#readme",
+  "description": ""
 }

@@ -1,4 +1,3 @@
-
 export function loginToggle() {
   const loginButton = document.querySelector('.site-nav-container-btn-login');
   const siteNavUser = document.getElementById('siteNavUser');

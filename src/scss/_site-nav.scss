@@ -146,11 +146,79 @@ nav {
           }
           .site-nav-message-panel {
             @extend %dropdown;
-            z-index: 10000000;
             width: 288px;
             box-shadow: 1px 1px 2px #ddd;
+            .site-nav-message-panel-header {
+              height: 37px;
+              line-height: 37px;
+              position: relative;
+              text-align: center;
+              border: {
+                bottom: 1px solid #EEE;
+              }
+              h2 {
+                font-size: 14px;
+                color: #222;
+              }
+            }
+            .site-nav-message-panel-body {
+              text-align: left;
+              .site-nav-message-panel-body-error {
+                padding: 0 35px;
+                .message-panel-body-error-notice {
+                  text-align: center;
+                  font-size: 14px;
+                  margin: {
+                    top: 30px;
+                    right: 0;
+                    bottom: 10px;
+                    left: 0;
+                  }
+                  svg {
+                    color: $navigation-bar-icon-color;
+                  }
+                }
+              }
+            }
             .site-nav-message-panel-footer {
               height: 32px;
+              position: relative;
+              border: {
+                top: 1px solid #EEE;
+              }
+              a {
+                color: $body-color;
+                svg {
+                  color: $navigation-bar-icon-color;
+                }
+                &:hover {
+                  color: $navigation-bar-highlight-color;
+                  svg, span {
+                    color: $navigation-bar-highlight-color;
+                  }
+                }
+              }
+              .setting {
+                position: absolute;
+                left: 17px;
+                top: 10px;
+                width: 12px;
+                height: 12px;
+              }
+              .feedback {
+                position: absolute;
+                left: 37px;
+                top: 10px;
+                width: 12px;
+                height: 12px;
+              }
+              .check-all {
+                line-height: 100%;
+                position: absolute;
+                top: 9px;
+                right: 17px;
+                text-align: left;
+              }
             }
           }
         }
