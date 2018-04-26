@@ -63,3 +63,4 @@ src/fonts/
 dist/
 src/js/venders/
 src/images/tbcarton.jpg
+*.jpg

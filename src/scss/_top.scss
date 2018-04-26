@@ -3,27 +3,162 @@
     color: #FFF;
   }
   padding-top: 24px;
-  height: 97px;
+  height: 121px;
   display: block;
   width: 100%;
   .top-wrap {
     width: 1190px;
     margin: 0 auto;
     position: relative;
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
-      overflow: hidden;
-    }
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    // &::after {
+    //   content: "";
+    //   display: table;
+    //   clear: both;
+    //   overflow: hidden;
+    // }
     .top-logo {
-      float: left;
+      position: relative;
+      padding: {
+        top: 8px;
+        left: 15px;
+      }
       width: 190px;
       background-color: transparent;
       img {
         display: block;
-        margin-left: 22px;
         width: 142px;
+      }
+    }
+    .search-wrap {
+      margin: {
+        left: 60px;
+      }
+      .search-bd {
+        .search-head {
+          ul {
+            padding-left: 17px;
+            li {
+              display: inline-block;
+              color: $color-primary;
+              width: 36px;
+              height: 22px;
+              line-height: 22px;
+              text-align: center;
+            }
+            .active {
+              color: #FFF;
+              font-weight: 700;
+              background: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+              border-radius: 7px 7px 0 0;
+            }
+          }
+        }
+        .search-panel {
+          form {
+            .search-bar-wrap {
+              width: 550px;
+              position: relative;
+              .magnify {
+                top: 13.5px;
+                left: 15px;
+                position: absolute;
+                color: $navigation-bar-icon-color;
+              }
+              svg.camera {
+                position: absolute;
+                right: 20px;
+                top: 8px;
+                color: $navigation-bar-icon-color;
+              }
+              input[type='text'] {
+                padding: {
+                  left: 35px;
+                  right: 80px;
+                }
+                width: 554px;
+                height: 40px;
+                border-radius: 25px 0 0 25px;
+                border: {
+                  style: solid;
+                  width: 2px;
+                  color: $color-primary;
+                  right: {
+                    style: none;
+                  }
+                }
+              }
+              input[type='submit'] {
+                font: {
+                  size: 18px;
+                  weight: 700;
+                }
+                width: 74px;
+                height: 40px;
+                position: absolute;
+                right: -74px;
+                top: 0px;
+                background: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+                border: none;
+                color: #FFF;
+                border-radius: 0 25px 25px 0;
+              }
+            }
+          }
+        }
+      }
+      .search-footer {
+        padding-top: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 624px;
+        ul {
+          li {
+            font-size: 0.66rem;
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
+        .more {
+          span {
+            margin-right: 4px;
+          }
+          svg {
+            color: $navigation-bar-icon-color;
+          }
+        }
+      }
+    }
+    .mobile-QR {
+      position: absolute;
+      right: 110px;
+      top: 0;
+      width: 74px;
+      height: 88px;
+      border: 1px solid #EEE;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .app-link {
+        img {
+          width: 62px;
+          height: 62px;
+        }
+        p {
+          color: $color-primary;
+          text-align: center;
+        }
+      }
+      .close {
+        position: absolute;
+        padding: 1px 4px;
+        top: -1px;
+        left: -19px;
+        color: $navigation-bar-icon-color;
+        border: 1px solid #EEE;
       }
     }
   }
