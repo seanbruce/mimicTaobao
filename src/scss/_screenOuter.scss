@@ -1,0 +1,42 @@
+.screen-outer {
+  background-color: #F4F4F4;
+  .screen-wrap {
+    width: 1190px;
+    margin: 0 auto;
+    .main {
+      background-color: #FFF;
+      .services {
+        border: solid 1px $color-primary;
+        color: #666;
+        font: {
+          size: 14px;
+          weight: 400;
+        }
+        width: 190px;
+        .multi-line-menu {
+          .line-menu {
+            position: relative;
+            height: 32px;
+            line-height: 32px;
+            padding: {
+              left: 25px;
+              right: 19px;
+            }
+            width: 189px;
+            margin: 0 auto;
+            li {
+              display: inline-block;
+            }
+            svg {
+              color: $navigation-bar-icon-color;
+              position: absolute;
+              right: 10px;
+              top: 50%;
+              margin-top: -6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
