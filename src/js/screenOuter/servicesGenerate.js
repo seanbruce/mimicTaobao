@@ -71,7 +71,6 @@ function groupArray(original) {
         if(entry.done !== true) {
           tempGroup.push(entry.value[1]);
         } else {
-          console.log('done');
         }
     }
     tempArray.push(tempGroup);
