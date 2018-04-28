@@ -65,3 +65,5 @@ src/js/venders/
 src/images/tbcarton.jpg
 *.jpg
 *.svg
+*.webp
+*.png

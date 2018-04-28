@@ -1,4 +1,5 @@
 .screen-outer {
+  z-index: 9000;
   background-color: #F4F4F4;
   .screen-wrap {
     width: 1190px;
@@ -6,6 +7,7 @@
     .main {
       background-color: #FFF;
       .services {
+        float: left;
         position: relative;
         border: solid 1px $color-primary;
         color: #666;
@@ -65,8 +67,145 @@
             color: $color-primary;
           }
           &.show {
+            z-index: 8000;
             opacity: 1;
           }
+        }
+      }
+      .two-carousel {
+        position: relative;
+        @keyframes move {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-520px);
+          }
+        }
+
+        @keyframes movebackward {
+          0% {
+            transform: translateX(-520px);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        float: left;
+        width: 520px;
+        height: 504px;
+        background-color: #EEE;
+        margin: {
+          left: 10px;
+          top: 10px;
+        }
+        .carousel-one {
+          width: 520px;
+          height: 275px;
+          background-color: purple;
+          position: relative;
+          overflow: hidden;
+          .carousel-one-wrapper {
+            display: flex;
+            img {
+              display: inline-block;
+            }
+            &.moveleft {
+              animation-name: move;
+              animation-duration: 300ms;
+              animation-fill-mode: forwards;
+              animation-timing-function: ease-out;
+            }
+            &.moveright {
+              animation-name: movebackward;
+              animation-duration: 300ms;
+              animation-fill-mode: forwards;
+              animation-timing-function: ease-out;
+            }
+            &.prepareMoveright {
+              transform: translateX(-520);
+            }
+
+          }
+          button {
+            background-color: rgba(0,0,0, 0.3);
+            cursor: pointer;
+            border: none;
+            width: 20px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            color: #FFF;
+            &.left-btn {
+              left: 0;
+              border: {
+                top: {
+                  right: {
+                    radius: 15px;
+                  }
+                }
+                bottom: {
+                  right: {
+                    radius: 15px;
+                  }
+                }
+              }
+              svg {
+                left: 5%;
+              }
+            }
+            &.right-btn {
+              right: 0;
+              border: {
+                top: {
+                  left: {
+                    radius: 15px;
+                  }
+                }
+                bottom: {
+                  left: {
+                    radius: 15px;
+                  }
+                }
+              }
+              svg {
+                right: 5%;
+              }
+            }
+            svg {
+              position: absolute;
+              top: 50%;
+              margin-top: -13.33px;
+            }
+          }
+          .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 70px;
+            height: 13px;
+            position: absolute;
+            left: 50%;
+            margin-left: -35px;
+            bottom: 5%;
+            background-color: rgba(white, 0.3);
+            li {
+              width: 8px;
+              height: 8px;
+              background-color: #FFF;
+              border-radius: 50%;
+              &.active {
+                background-color: $color-primary;
+              }
+            }
+          }
+        }
+        .carousel-two {
+          width: 520px;
+          height: 229px;
+          background-color: blue;
         }
       }
     }
