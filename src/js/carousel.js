@@ -11,18 +11,17 @@ export default class Carousel {
     this.wrapper = carouselContainer.getElementsByClassName('carouselWrapper')[0];
     this.leftButton = this.carouselContainer.getElementsByClassName('left-btn')[0];
     this.rightButton = this.carouselContainer.getElementsByClassName('right-btn')[0];
+    this.scoreboard_ul = this.carouselContainer.getElementsByClassName('scoreboard')[0];
   }
 
   //Change the images order in the wrapper element. remove the first image then append it at last.
   changeOrder() {
-    console.log('changeOrder');
     const img = this.wrapper.removeChild(this.wrapper.firstElementChild);
     this.wrapper.appendChild(img);
   }
 
   //Change the images order reversely in the wrapper element, remove the last image than insert it in the beginning of the wrapper.
   changeOrderReverse() {
-    console.log('changeOrderReverse');
     const img = this.wrapper.removeChild(this.wrapper.lastElementChild);
     this.wrapper.insertBefore(img, this.wrapper.firstElementChild);
   }
@@ -43,20 +42,52 @@ export default class Carousel {
 
 // register eventHandlers.
   createCarousel() {
+    const currentImg = this.wrapper.firstElementChild.dataset.map;
+    for(const indicator of this.scoreboard_ul.children) {
+      if(indicator.dataset.map === currentImg) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    }
     window.setInterval(() => {
-      console.log(Date.now() -this.initTime,    this.manualMode);
       if((Date.now() - this.initTime) > this.idleTime && this.manualMode) {
         this.autoMove();
       }
     }, 1000);
     this.wrapper.addEventListener('animationstart', e => {
       this.processState  = false;
+      let currentImgForMove = this.wrapper.children[1].dataset.map;
+      let currentImgForMoveBackword = this.wrapper.children[0].dataset.map;
+      if(e.animationName === 'move') {
+        console.log(e.animationName);
+        for(const indicator of this.scoreboard_ul.children) {
+          if(indicator.dataset.map === currentImgForMove) {
+            indicator.classList.add('active');
+          } else {
+            indicator.classList.remove('active');
+          }
+        }
+      }
+      if(e.animationName === 'movebackward') {
+        for(const indicator of this.scoreboard_ul.children) {
+          if(indicator.dataset.map === currentImgForMoveBackword) {
+            indicator.classList.add('active');
+          } else {
+            indicator.classList.remove('active');
+          }
+        }
+      }
+
+
       if(e.animationName === 'moveright') {
         this.wrapper.classList.remove('prepareMoveright');
       }
     }, false);
     this.wrapper.addEventListener('animationend', e => {
       this.processState = true;
+
+
       if(this.manualMode === false) {
         this.wrapper.classList.remove('moveleft');
         this.changeOrder();
