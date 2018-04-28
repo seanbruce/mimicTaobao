@@ -1,12 +1,13 @@
-
 export default class Carousel {
 
-  constructor(carouselContainer, interval = 1000) {
+  constructor(carouselContainer, interval = 1000, idleTime = 3000) {
     this.carouselContainer = carouselContainer;
     this.interval = interval;
+    this.idleTime = idleTime;
     this.processState = false;
     this.moveDirection = null;
-    this.manualMode = false;
+    this.manualMode = true;
+    this.initTime = Date.now();
     this.wrapper = carouselContainer.getElementsByClassName('carouselWrapper')[0];
     this.leftButton = this.carouselContainer.getElementsByClassName('left-btn')[0];
     this.rightButton = this.carouselContainer.getElementsByClassName('right-btn')[0];
@@ -42,36 +43,30 @@ export default class Carousel {
 
 // register eventHandlers.
   createCarousel() {
+    window.setInterval(() => {
+      console.log(Date.now() -this.initTime,    this.manualMode);
+      if((Date.now() - this.initTime) > this.idleTime && this.manualMode) {
+        this.autoMove();
+      }
+    }, 1000);
+    this.wrapper.addEventListener('animationstart', e => {
+      this.processState  = false;
+      if(e.animationName === 'moveright') {
+        this.wrapper.classList.remove('prepareMoveright');
+      }
+    }, false);
     this.wrapper.addEventListener('animationend', e => {
-      console.log('animationend', e);
       this.processState = true;
-      if(!(this.manualMode)) {
+      if(this.manualMode === false) {
         this.wrapper.classList.remove('moveleft');
-        if(this.moveDirection === 'left') {
-          this.changeOrder();
-        } else if(this.moveDirection === 'right'){
-          this.changeOrderReverse();
-        }
+        this.changeOrder();
       } else {
         if(e.animationName !== 'move') {
           this.wrapper.classList.remove('moveright');
-  //         if(e.animationName === 'movebackward') {
-  //           this.wrapper.classList.remove('prepareMoveright');
-  //           if(this.moveDirection === 'right') {
-  // k          } else {
-  //             // this.changeOrderReverse();
-  //           }
-  //         }
         } else {
           this.wrapper.classList.remove('moveleft');
           this.changeOrder();
         }
-      }
-    }, false);
-    this.wrapper.addEventListener('animationstart', e => {
-      this.processState  = false;
-      if(e.animationName === moveright) {
-        this.wrapper.classList.remove('prepareMoveright');
       }
     }, false);
     this.leftButton.addEventListener('click', () => this.moveLeftManual(), false);
@@ -79,9 +74,7 @@ export default class Carousel {
   }
 
   autoMove() {
-    console.log('animationId: ', this.animation);
     this.manualMode = false;
-    this.processState = false;
     this.moveLeft();
     this.animation = window.setInterval( () => {
       if(this.processState) {
@@ -93,37 +86,21 @@ export default class Carousel {
 
   moveLeftManual() {
     if(this.processState) {
+      this.initTime = Date.now();
+      this.terminateAnimation();
       this.manualMode = true;
-      this.terminateAnimation();
-      this.processState = false;
       this.moveLeft();
-      this.animation = window.setInterval( () => {
-      }, 20);
-    } else {
-      this.terminateAnimation();
     }
   }
+
   moveRightManual() {
     if(this.processState) {
+      this.initTime = Date.now();
       this.terminateAnimation();
       this.manualMode = true;
-      this.processState = false;
       this.changeOrderReverse()
       this.wrapper.classList.add('prepareMoveright');
-      // this.animation = window.setInterval( () => {
-        // if(this.processState) {
-          window.clearInterval(this.animation);
-          this.processState = false;
-          this.wrapper.classList.add('moveright');
-          this.animation = window.setInterval( () => {
-            if(this.processState) {
-              window.clearInterval(this.animation);
-            }
-          }, 0)
-        // }
-      // }, 0)
-    } else {
-      this.terminateAnimation();
+      this.moveRight();
     }
   }
 
