@@ -83,26 +83,32 @@ const tempResult = document.createElement('ul');
 
 
 export function servicesGenerate() {
-  for(const servicesGroup of servicesGroupList) {
+  for(const [groupIndex , groupValue] of servicesGroupList.entries()) {
     const tempUL = document.createElement('ul');
     tempUL.classList.add('line-menu');
-    for(const service of servicesGroup) {
+    tempUL.dataset.lineNumber = groupIndex;
+    for(const service of groupValue) {
       const tempLink = document.createElement('a');
+      tempLink.dataset.lineNumber = groupIndex;
       tempLink.innerText = service.name;
       tempLink.href = service.url;
       const tempLI = document.createElement('li');
+      tempLI.dataset.lineNumber = groupIndex;
       tempLI.appendChild(tempLink);
       tempUL.appendChild(tempLI);
     }
     const tempI = document.createElement('i');
+    tempI.dataset.lineNumber = groupIndex;
     tempI.classList.add('fas');
     tempI.classList.add('fa-angle-right');
     tempI.classList.add('fa-xs');
     tempUL.appendChild(tempI);
     const tempSpan = document.createElement('span');
+    tempSpan.dataset.lineNumber = groupIndex;
     tempSpan.classList.add('pipe');
     tempSpan.innerText = '/';
     const tempSpanSecond = tempSpan.cloneNode(true);
+    tempSpanSecond.dataset.lineNumber = groupIndex;
     tempUL.insertBefore(tempSpan, tempUL.children[1]);
     tempUL.insertBefore(tempSpanSecond, tempUL.children[3]);
     servicesMultiLineMenu_ul.appendChild(tempUL);
