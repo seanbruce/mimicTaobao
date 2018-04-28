@@ -203,9 +203,82 @@
           }
         }
         .carousel-two {
+          position: relative;
           width: 520px;
           height: 229px;
-          background-color: blue;
+          .head {
+            width: 520px;
+            height: 32px;
+            font: {
+              size: 14px;
+            }
+            padding: {
+              top: 11px;
+            }
+            border: {
+              bottom: {
+                style: solid;
+                width: 3px;
+                color: #FF1648;
+              }
+            }
+            background-color: #F1F1F1;
+            .inner {
+              position: relative;
+              height: 18px;
+              line-height: 18px;
+              img {
+                background-color: #FFF;
+              }
+              em {
+                font: {
+                  size: 12px;
+                  style: normal;
+                }
+                color: #666;
+              }
+              strong {
+                height: 18px;
+                line-height: 18px;
+                position: absolute;
+                right: 0;
+                font: {
+                  family: sans-serif;
+                  size: 12px;
+                  weight: 400;
+                }
+                .red {
+                  height: 18px;
+                  line-height: 18px;
+                  color: #FF1648;
+                  font: {
+                    style: normal;
+                    size: 12px;
+                    weight: 400;
+                  }
+                }
+              }
+            }
+          }
+          .footer {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 30px;
+            height: 3px;
+            .carousel-nav {
+              display: flex;
+              width: 100%;
+              height: 3px;
+              position: absolute;
+              li {
+                flex-grow: 1;
+                display: inline-block;
+                height: 3px;
+                background-color: #FF1648;
+              }
+            }
+          }
         }
       }
     }
