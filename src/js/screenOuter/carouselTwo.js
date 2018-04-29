@@ -12,6 +12,7 @@ export default class CarouselTwo {
     this.leftButton = this.carouselContainer.getElementsByClassName('left-btn')[0];
     this.rightButton = this.carouselContainer.getElementsByClassName('right-btn')[0];
     this.scoreboard_ul = this.carouselContainer.getElementsByClassName('scoreboard')[0];
+    this.footerIndicator = this.carouselContainer.getElementsByClassName('carousel-nav')[0];
   }
 
   //Change the images order in the wrapper element. remove the first image then append it at last.
@@ -51,6 +52,13 @@ export default class CarouselTwo {
         indicator.classList.remove('active');
       }
     }
+    for(const indicator of this.footerIndicator.children) {
+      if(indicator.dataset.map === currentImg) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    }
     window.setInterval(() => {
       if((Date.now() - this.initTime) > this.idleTime && this.manualMode) {
         this.autoMove();
@@ -68,9 +76,24 @@ export default class CarouselTwo {
             indicator.classList.remove('active');
           }
         }
+        for(const indicator of this.footerIndicator.children) {
+          if(indicator.dataset.map === currentImgForMove) {
+            indicator.classList.add('active');
+          } else {
+            indicator.classList.remove('active');
+          }
+        }
+
       }
       if(e.animationName === 'movebackward') {
         for(const indicator of this.scoreboard_ul.children) {
+          if(indicator.dataset.map === currentImgForMoveBackword) {
+            indicator.classList.add('active');
+          } else {
+            indicator.classList.remove('active');
+          }
+        }
+        for(const indicator of this.footerIndicator.children) {
           if(indicator.dataset.map === currentImgForMoveBackword) {
             indicator.classList.add('active');
           } else {
