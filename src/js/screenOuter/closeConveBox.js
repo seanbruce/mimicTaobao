@@ -4,7 +4,8 @@ const conveList = document.querySelector('.screen-outer .rightmost-column .conve
 const conveListFloat = conveList.getElementsByClassName('item-float');
 
 function closeConveBox() {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', e => {
+    e.preventDefault();
     for(const list of conveListFloat) {
       list.classList.remove('selected');
     }

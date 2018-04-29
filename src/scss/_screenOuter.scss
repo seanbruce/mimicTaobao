@@ -1006,5 +1006,89 @@
         }
       }
     }
+    .APPs {
+      box-sizing: content-box;
+      padding-top: 1px;
+      position: relative;
+      background-color: #FFF;
+      .app-container {
+        margin-top: 0;
+        position: relative;
+        height: 107px;
+        h3 {
+          font-size: 14px;
+          padding-left: 14px;
+          height: 30px;
+          line-height: 30px;
+          position: relative;
+          z-index: 2;
+          .more {
+            position: absolute;
+            right: 10px;
+            font: {
+              size: 12px;
+              weight: 400;
+            }
+            color: #3c3c3c;
+          }
+        }
+        .apps-nav {
+          @extend %clearfix;
+          padding-left: 23px;
+          position: relative;
+          height: 84px;
+          li {
+            transition: all 0s;
+            position: relative;
+            float: left;
+            width: 32px;
+            height: 32px;
+            margin-right: 21px;
+            margin-bottom: 8px;
+            &:hover {
+              .app-QR {
+              display: inline-block;
+              z-index: 1000;
+              }
+            }
+            a {
+              color: #3c3c3c;
+              .app-icon {
+                width: 32px;
+                height: 32px;
+                border: 0;
+              }
+            }
+            .app-QR {
+              bottom: 39px;
+              left: -32px;
+              width: 90px;
+              height: 102px;
+              background: #FFF;
+              border: 1px solid #dedede;
+              text-align: center;
+              display: none;
+              position: absolute;
+              z-index: -1;
+              .QR-code {
+                width: 85px;
+                height: 85px;
+                padding: 8px;
+              }
+              p {
+                position: absolute;
+                bottom: 3px;
+                left: 0;
+                right: 0;
+                height: 20px;
+                line-height: 20px;
+                color: #666;
+                overflow:hidden;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
