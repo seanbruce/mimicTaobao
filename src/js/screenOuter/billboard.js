@@ -9,19 +9,17 @@ function billBoardHandler() {
   boardHead_UL.addEventListener('mouseover', e => {
     const targetLI = e.target.closest('li');
     if(targetLI) {
-      setTimeout( () => {
-        for(const li of boardHead_UL.children) {
-          li.classList.remove('selected');
+      for(const li of boardHead_UL.children) {
+        li.classList.remove('selected');
+      }
+      targetLI.classList.add('selected');
+      for(const li of boardBody_UL.children) {
+        if(targetLI.dataset.map !== li.dataset.map) {
+          li.style.display = 'none';
+        } else {
+          li.style.display = 'block';
         }
-        targetLI.classList.add('selected');
-        for(const li of boardBody_UL.children) {
-          if(targetLI.dataset.map !== li.dataset.map) {
-            li.style.display = 'none';
-          } else {
-            li.style.display = 'block';
-          }
-        }
-      }, 200);
+      }
     }
   }, false);
 }
