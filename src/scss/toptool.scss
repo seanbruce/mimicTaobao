@@ -1,0 +1,27 @@
+.top-tool {
+  background-color: #FFF;
+  .fixedtool {
+    position: absolute;
+    top: 505px;
+    display: block;
+    transition: none;
+    z-index: 4;
+    right: 50%;
+    width: 50px;
+    text-align: center;
+    margin-right: -655px;
+    .wangwang {
+      position: absolute;
+      height: 36px;
+      width: 50px;
+      line-height: 36px;
+      text-align: center;
+      font-size: 32px;
+      color: #FF7F13;
+      top: -28px;
+      right: 0;
+      display: inline-block;
+      
+    }
+  }
+}
